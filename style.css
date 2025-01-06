@@ -1,0 +1,217 @@
+:root {
+  --cyan-medium: hsl(180, 29%, 50%);
+  --cyan-pale: hsl(180, 52%, 96%);
+  --cyan-soft: hsl(180, 31%, 95%);
+  --cyan-grayish: hsl(180, 8%, 52%);
+  --cyan-deep: hsl(180, 14%, 20%);
+}
+
+/* general */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: var(--cyan-pale) !important;
+  color: var(--cyan-deep) !important;
+}
+
+body > * {
+  font-family: "League Spartan", serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+h3 {
+  font-weight: 700 !important;
+  margin-bottom: 0 !important;
+  color: var(--cyan-deep) !important;
+}
+
+header {
+  background-color: var(--cyan-medium);
+}
+
+header img {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+a {
+  color: var(--cyan-pale) !important;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0 !important;
+  gap: 1.5rem;
+}
+
+.card {
+  border: none !important;
+  background-color: var(--cyan-soft);
+  transition: all 250ms ease-in;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card[data-featured="true"] {
+  border-left: 5px solid var(--cyan-medium) !important;
+}
+
+.card:hover {
+  box-shadow: var(--bs-box-shadow-lg) !important;
+  cursor: pointer;
+}
+
+.card img {
+  height: 100px;
+  width: 100px;
+}
+
+.card img + div {
+  gap: 5px;
+}
+
+.badge {
+  border-radius: 20px !important;
+  color: var(--cyan-soft) !important;
+  padding-top: 7px !important;
+}
+
+.badge.new {
+  background-color: var(--cyan-medium);
+}
+
+.badge.featured {
+  background-color: var(--cyan-deep);
+}
+
+.label-container {
+  justify-content: flex-end;
+}
+
+.label {
+  background-color: var(--cyan-pale);
+  color: var(--cyan-medium);
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: all 100ms ease-in;
+}
+
+.label:hover {
+  background-color: var(--cyan-medium);
+  color: var(--cyan-pale);
+}
+
+.filters {
+  display: none;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 8px 6px -6px #ccc;
+  margin-bottom: 20px;
+}
+
+.filters.active {
+  display: flex;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  background-color: #eef6f6;
+  padding: 0;
+  border-radius: 4px;
+  font-weight: bold;
+  padding-left: 7px;
+}
+
+.filter-item span {
+  line-height: 1;
+  padding-top: 4px !important;
+}
+
+.remove-filter {
+  background: var(--cyan-medium);
+  color: #fff;
+  border: none;
+  margin-left: 5px;
+  padding: 5 10px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: all 100ms ease-in;
+}
+
+.remove-filter:hover {
+  background: var(--cyan-deep);
+}
+
+.clear-filters {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--cyan-medium);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 100ms ease-in;
+}
+
+.clear-filters:hover {
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: auto;
+  background-color: var(--cyan-medium);
+  padding: 30px 0;
+  text-align: center;
+  color: var(--cyan-pale);
+}
+
+@media (max-width: 767px) {
+  ul {
+    gap: 4rem !important;
+    padding: 0 30px;
+    padding-inline-start: 30px !important;
+  }
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  .card img {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    top: -30px;
+  }
+
+  .card img + div {
+    margin-top: 30px;
+    gap: 15px;
+  }
+
+  .label-container {
+    justify-content: flex-start !important;
+    border-top: 1px solid hsla(180, 8%, 52%, 0.5);
+    padding-top: 1rem;
+  }
+
+  .filters {
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+  }
+}
